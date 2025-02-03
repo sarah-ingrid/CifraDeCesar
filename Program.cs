@@ -7,14 +7,13 @@ string palavra = "", concat = "";
 int posicao, op;
 string final;
 
-Console.WriteLine("********* CIFRA DE CÉSAR *********\n\n\n");
-
 Console.Write("Escolha uma opção:\n\n\t1 - Codificar\n\t2 - Descodificar\n");
 op = Convert.ToInt32(Console.ReadLine());
 
 
 switch (op)
 {
+    // escolheu codificar
     case 1:
         Console.Write("Digite a palavra para codificar: ");
     // recebendo a palavra e colocando as letras minusculas para manipular melhor o codigo ASCII
@@ -32,19 +31,16 @@ switch (op)
             if (cc > 122)
                 cc = cc - 26;
 
-            //        Console.Write(cc + " ");
-
             concat += Char.ConvertFromUtf32(cc);
 
 
         }
         final = char.ToUpper(concat[0]) + concat.Substring(1); // formatando para a primeira letra ser maiuscula
-        Console.WriteLine($"\n\nPalavra descodificada: {final}");
+        Console.WriteLine($"\n\nPalavra codificada em Cifra de César: {final}");
         break;
 
 
-
-
+    // escolheu descodificar
     case 2:
         Console.Write("Digite a palavra descodificar: ");
         palavra = Console.ReadLine().ToLower();
